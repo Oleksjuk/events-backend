@@ -5,7 +5,7 @@ import { prismaClient } from "./src/model/PrismaClient.js";
 
 class EventsFetcher {
     clientId = "NDE1NjIxMzN8MTcxNTcyMjUyMi43NDM4NzQz"
-    fetch_interval = process.env.FETCH_INTERVAL
+    fetch_interval = Number(process.env.FETCH_INTERVAL)
 
     eventMapper = new EventMapper()
     requestOptions = {
