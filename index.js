@@ -8,7 +8,7 @@ const app = express()
 const port = process.env.PORT
 
 const corsOptions = {
-  origin: process.env.FRONT_URL,
+  origin: process.env.PORT,
   optionsSuccessStatus: 200
 }
 
@@ -23,6 +23,7 @@ if (process.argv[2] === "fetch-enabled") {
   console.log("-------------Fetch script enabled-------------")
 }
 
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(router);
 
