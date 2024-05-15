@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db/db.sqlite"
+}
+
+model Event {
+  id  Int @id @default(autoincrement())
+  title String 
+  description String
+  eventDate BigInt
+  organizer String
+  registrations EventRegistration[]
+  fetchedEventId Int? @unique
+}
+
+model EventRegistration {
+  id  Int @id @default(autoincrement())
+  eventId Int 
+  event Event @relation(fields: [eventId], references: [id])
+  fullName String
+  email String
+  dateOfBirth String
+  source Int
+  registerDate BigInt
+}
+
