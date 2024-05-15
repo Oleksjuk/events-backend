@@ -13,7 +13,7 @@ const corsOptions = {
 }
 
 
-if (process.argv[2] === "fetch-enabled") {
+if (process.argv[2] === "fetch-enabled" || process.env.FETCH_ENABLED === "true") {
   const out = fs.openSync('./out.log', 'a')
   const err = fs.openSync('./out.log', 'a')
 
