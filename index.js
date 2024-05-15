@@ -8,7 +8,7 @@ const app = express()
 const port = process.env.PORT
 
 const corsOptions = {
-  origin: process.env.PORT,
+  origin: "*",
   optionsSuccessStatus: 200
 }
 
