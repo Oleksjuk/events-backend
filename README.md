@@ -15,3 +15,5 @@ After installing the dependencies, you can run the command using Node.js:
    **node index.js fetch-enabled**
 ## Option
   **`fetch-enabled`**: Enable script fetching of events by third-party API
+## Deployed version
+  [Events Frontend](https://oleksjuk.github.io/events-frontend/events.html)
